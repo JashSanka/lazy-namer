@@ -78,7 +78,7 @@ function addCommonOptions(command: Command) {
 }
 
 program
-    .name("lazy-namer")
+    .name("prisma-lazy-namer")
     .description("Naming convention management for Prisma schemas")
     .version("1.0.0");
 
