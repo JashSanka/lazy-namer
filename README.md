@@ -215,6 +215,14 @@ npm run build
 - Commander.js
 - Vitest
 
+## License
+
+This project is licensed under the [ISC License](LICENSE).
+
+Copyright (c) 2026, Jash Sanka.
+
+See the [LICENSE](LICENSE) file for details.
+
 ---
 
 **Lazy-Namer** — Less manual mapping. More building.
