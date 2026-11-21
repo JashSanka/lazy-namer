@@ -1,8 +1,8 @@
-# Lazy-Namer
+# prisma-lazy-namer
 
 **Automatic naming convention management for Prisma schemas.**
 
-Lazy-Namer helps you maintain consistent database naming conventions in your Prisma schema without manually writing `@map` and `@@map` attributes.
+prisma-lazy-namer helps you maintain consistent database naming conventions in your Prisma schema without manually writing `@map` and `@@map` attributes.
 
 Switch naming conventions, detect inconsistent mappings, and automatically update your schema with a simple CLI.
 
@@ -14,20 +14,20 @@ Switch naming conventions, detect inconsistent mappings, and automatically updat
 - **Schema analysis:** Detects missing or inconsistent database mappings.
 - **Selective exclusions:** Exclude entire models or individual fields.
 - **Dry-run mode:** Preview schema changes without modifying files.
-- **Custom schema paths:** Run Lazy-Namer against schemas outside the default Prisma directory.
+- **Custom schema paths:** Run prisma-lazy-namer against schemas outside the default Prisma directory.
 
 ## Installation
 
-Install Lazy-Namer as a development dependency:
+Install prisma-lazy-namer as a development dependency:
 
 ```bash
-npm install -D lazy-namer
+npm install -D prisma-lazy-namer
 ```
 
 You can also run it directly using `npx`:
 
 ```bash
-npx lazy-namer --help
+npx prisma-lazy-namer --help
 ```
 
 ## Supported naming conventions
@@ -43,26 +43,26 @@ The default convention is `snake_case`.
 
 ## Usage
 
-Lazy-Namer provides two main commands: `check` and `fix`.
+prisma-lazy-namer provides two main commands: `check` and `fix`.
 
 ### 1. Check your schema
 
 Identify database mappings that don't follow your selected convention.
 
 ```bash
-npx lazy-namer check
+npx prisma-lazy-namer check
 ```
 
 Specify a convention:
 
 ```bash
-npx lazy-namer check --convention PascalCase
+npx prisma-lazy-namer check --convention PascalCase
 ```
 
 Specify a custom schema path:
 
 ```bash
-npx lazy-namer check --schema ./prisma/schema.prisma
+npx prisma-lazy-namer check --schema ./prisma/schema.prisma
 ```
 
 ### 2. Fix your schema
@@ -70,13 +70,13 @@ npx lazy-namer check --schema ./prisma/schema.prisma
 Automatically add or update database mappings.
 
 ```bash
-npx lazy-namer fix
+npx prisma-lazy-namer fix
 ```
 
 Choose a convention:
 
 ```bash
-npx lazy-namer fix --convention camelCase
+npx prisma-lazy-namer fix --convention camelCase
 ```
 
 ### 3. Preview changes
@@ -84,7 +84,7 @@ npx lazy-namer fix --convention camelCase
 Use `--dry-run` to preview the transformed schema without modifying the original file.
 
 ```bash
-npx lazy-namer fix --convention PascalCase --dry-run
+npx prisma-lazy-namer fix --convention PascalCase --dry-run
 ```
 
 Remove `--dry-run` to apply the changes.
@@ -93,24 +93,24 @@ Remove `--dry-run` to apply the changes.
 
 Sometimes you don't want certain models or fields to be modified.
 
-Lazy-Namer supports repeatable exclusion options.
+prisma-lazy-namer supports repeatable exclusion options.
 
 **Exclude an entire model:**
 
 ```bash
-npx lazy-namer fix --exclude-model User
+npx prisma-lazy-namer fix --exclude-model User
 ```
 
 **Exclude a specific field:**
 
 ```bash
-npx lazy-namer fix --exclude-field BlogPost.createdAt
+npx prisma-lazy-namer fix --exclude-field BlogPost.createdAt
 ```
 
 **Combine exclusions:**
 
 ```bash
-npx lazy-namer fix \
+npx prisma-lazy-namer fix \
   --convention PascalCase \
   --exclude-model User \
   --exclude-field BlogPost.createdAt \
@@ -135,10 +135,10 @@ model User {
 Run:
 
 ```bash
-npx lazy-namer fix --convention snake_case
+npx prisma-lazy-namer fix --convention snake_case
 ```
 
-Lazy-Namer transforms the database mappings:
+prisma-lazy-namer transforms the database mappings:
 
 ```prisma
 model User {
@@ -169,7 +169,7 @@ The default schema path is `prisma/schema.prisma`.
 
 ## Supported databases
 
-Lazy-Namer is intended for Prisma schemas using SQL database providers, including:
+prisma-lazy-namer is intended for Prisma schemas using SQL database providers, including:
 
 - PostgreSQL
 - MySQL
@@ -185,8 +185,8 @@ MongoDB is not currently supported.
 Clone the repository:
 
 ```bash
-git clone https://github.com/JashSanka/lazy-namer.git
-cd Lazy-Namer
+git clone https://github.com/JashSanka/prisma-lazy-namer.git
+cd prisma-lazy-namer
 ```
 
 Install dependencies:
@@ -225,4 +225,4 @@ See the [LICENSE](LICENSE) file for details.
 
 ---
 
-**Lazy-Namer** — Less manual mapping. More building.
+**prisma-lazy-namer** — Less manual mapping. More building.

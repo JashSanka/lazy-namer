@@ -1,11 +1,11 @@
 {
-  "name": "lazy-namer",
+  "name": "prisma-lazy-namer",
   "version": "1.0.0",
   "description": "Automatic naming convention management for Prisma schemas",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "lazy-namer": "dist/cli.js"
+    "prisma-lazy-namer": "dist/cli.js"
   },
   "files":[
     "dist"
